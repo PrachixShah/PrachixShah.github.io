@@ -191,21 +191,41 @@
 
 <!-- ---------- 6. MEMS ---------- -->
 <article class="entry" id="mems">
-  <p class="kicker">NE 454B / 455B · Nano-Instrumentation Laboratory · Fall 2026 – Winter 2027 · In progress</p>
+  <p class="kicker">NE 454B / 455B · Nano-Instrumentation Laboratory · Fall 2026 – Winter 2027 · Simulated, fab in winter</p>
   <h2>MEMS actuators, from COMSOL to the cleanroom</h2>
   <ul class="tags">
-    <li class="tag">COMSOL</li>
+    <li class="tag">COMSOL Multiphysics</li>
+    <li class="tag">Electromechanics</li>
+    <li class="tag">Joule heating</li>
     <li class="tag">LayoutEditor</li>
-    <li class="tag">Photolithography</li>
-    <li class="tag">PECVD</li>
-    <li class="tag">RIE</li>
+    <li class="tag">PECVD · RIE</li>
     <li class="tag">Probe test</li>
   </ul>
-  <p>Design MEMS actuators against a requirements-and-constraints spec — 2D and 3D FEM in COMSOL Multiphysics alongside lumped models, feasibility assessed before anything gets committed — then generate the mask layout in LayoutEditor to the design rules of a real multi-user microfabrication process.</p>
+  <p>Two actuators, designed to a spec and to the design rules of a real multi-user microfab process. One is electrostatic: voltage pulls a plate down. The other is electrothermal: it bends by heating itself. Each started as a lumped model and was then checked in 3D FEM in COMSOL. Next term I fabricate them.</p>
+  <div class="beat">
+    <span class="beat-label">Electrostatic</span>
+    <p>A 600&nbsp;×&nbsp;600&nbsp;µm aluminium plate, 1.2&nbsp;µm thick, held 3&nbsp;µm above a chromium electrode (0.3&nbsp;µm of silicon nitride in between) by four 20&nbsp;×&nbsp;123&nbsp;µm guided-end beams. The COMSOL model couples solid mechanics and electrostatics through electromechanical forces on a moving mesh, about 300k degrees of freedom.</p>
+  </div>
+  <div class="beat">
+    <span class="beat-label">Result</span>
+    <p>Capacitance climbs from 0.96&nbsp;pF at rest to about 1.67&nbsp;pF at 3.45&nbsp;V. Displacement reaches 1&nbsp;µm, a third of the gap, near 3&nbsp;V and then runs away. That’s pull-in, at around 3.5&nbsp;V.</p>
+  </div>
+  <div class="beat">
+    <span class="beat-label">Electrothermal</span>
+    <p>A hot-arm/cold-arm actuator: a 20&nbsp;µm hot arm beside a 40&nbsp;µm cold arm, 600&nbsp;µm long, joined through a narrow flexure. Both arms carry the same current, but the narrow one has more resistance, so it runs hotter and expands more, and the tip swings sideways. Modelled with Joule heating, thermal expansion and a conductivity that falls with temperature (TCR 0.005&nbsp;K⁻¹).</p>
+  </div>
+  <div class="beat">
+    <span class="beat-label">The limit</span>
+    <p>At the 0.2&nbsp;V operating point the tip moves about 6&nbsp;µm, the hottest point sits near 490&nbsp;K, and it draws about 80&nbsp;mA. Push the sweep further and you get almost 40&nbsp;µm, but just past 0.5&nbsp;V the hot arm crosses aluminium’s melting point (933&nbsp;K). The model is happy to keep going after that; a real device would melt. The current curve flattens as the arm heats too: resistance rises with temperature, so the heating partly limits itself.</p>
+  </div>
   <p>The winter term is the rare part: I fabricate my own masks. Four mask levels — four-point-probe sheet resistance on chromium, photolithography and wet etch, PECVD silicon nitride, RIE, a sacrificial layer, aluminium deposition, then sacrificial release — followed by visual inspection and precision IC prober testing.</p>
   <figure>
+    <div class="slot">assets/img/mems-sims.png — electrostatic C–V and displacement, electrothermal displacement and temperature</div>
+    <figcaption>Fig. 5 — The two COMSOL sweeps. The electrostatic curves bend sharply once the plate passes a third of the 3&nbsp;µm gap; the electrothermal hot arm would melt past about 0.5&nbsp;V.</figcaption>
+  </figure>
+  <figure>
     <div class="slot">assets/img/mems-layout.png — mask layout, and a micrograph of the released device</div>
-    <figcaption>Fig. 5 — Layout on the left, micrograph on the right. Devices that failed release are more interesting than the ones that didn’t.</figcaption>
+    <figcaption>Fig. 6 — Layout and the released device, after winter fab. Devices that failed release are more interesting than the ones that didn’t.</figcaption>
   </figure>
 </article>
 

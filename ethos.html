@@ -16,8 +16,6 @@
   --body:"Newsreader",Georgia,"Times New Roman",serif;
   --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#191610;--paper-2:#211D15;--ink:#ECE4D3;--muted:#9A917C;--rule:#2C271C;--accent:#9BA585;}}
 *,*::before,*::after{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 [id]{scroll-margin-top:5rem;}
@@ -66,7 +64,6 @@ em{font-style:italic;}
 .sec:first-of-type{border-top:0;padding-top:0;}
 .belief{margin:0 0 .9rem;}
 .belief .star{color:var(--accent);font-weight:500;}
-.belief .ev{font-family:var(--mono);font-size:.7rem;letter-spacing:.03em;color:var(--muted);text-transform:uppercase;display:block;margin-top:.35rem;}
 
 /* guestbook + end */
 .gb{font-size:1rem;}
@@ -109,7 +106,6 @@ em{font-style:italic;}
       <li><a href="#beliefs" class="on">Beliefs</a> <span class="star">*</span></li>
       <li><a href="#working-modes">Working Modes</a></li>
       <li><a href="#questions">Questions I'm Sitting With</a></li>
-      <li><a href="#green-flags">Green Flags</a></li>
     </ul>
 
     <p class="grp">Microblogs</p>
@@ -126,31 +122,46 @@ em{font-style:italic;}
   <!-- ============ NOTES (stacked; left rail jumps to anchors — zero JS) ============ -->
   <main>
 
-    <!-- COPY-PASTE BLOCK: duplicate a <article class="note"> to add a collection. -->
+    <!-- COPY-PASTE BLOCK: duplicate a <p class="sec"> + its <p class="belief"> lines to add a section. -->
     <article class="note" id="beliefs">
       <p class="tag">Ongoing</p>
       <h1>Beliefs <span class="star">*</span></h1>
-      <p class="sub">A running set of things I hold true, until I don't.</p>
-      <p class="intro">Everything here is placeholder in a guess at your voice — keep what rings true, cut the rest. The format is the point; the words are yours to write.</p>
+      <p class="sub">Working theories about how to live. Revised often, defended in person.</p>
+      <p class="intro">These change. I'm trying to keep the page honest about which ones I've actually tested and which ones I just like the sound of. The starred ones are the ones I'll go to the mat for.</p>
 
-      <p class="sec">On measurement</p>
-      <p class="belief"><span class="star">*</span> How you choose to measure something is a statement about what you're willing to be honest about. The work I love is turning <em>we can't measure that directly</em> into a real number with a real map.
-        <span class="ev">Receipts → cell-gap metrology at Lumentum · the maser RF front end</span></p>
-      <p class="belief">An estimate nobody checks is just a feeling wearing a lab coat.</p>
+      <p class="sec">On paying attention</p>
+      <p class="belief"><span class="star">*</span> How much good is in a day depends partly on how much of it I actually catch. Looking straight at the hard parts and <em>still</em> noticing the friend who stayed, the stupid joke, the sky — that isn't denial. It's refusing to rush past my own life.</p>
+      <p class="belief">The reason to stargaze has nothing to do with astronomy. Something that big makes the self feel smaller, and for a while I take up less room in my own head. I'll drive hours past the light pollution for it.</p>
 
-      <p class="sec">On how to spend a night</p>
-      <p class="belief"><span class="star">*</span> The best ones start at 2&nbsp;a.m. in a cold field. I'll lose a whole night's sleep for a meteor shower without thinking twice — and what you'll stay up for says more than a transcript does.
-        <span class="ev">Receipts → the bucket list · the photos</span></p>
+      <p class="sec">On giving people room</p>
+      <p class="belief"><span class="star">*</span> Give people slack. I'm quick to explain someone by their character and slow to remember their circumstances — a generous read is mostly me trying to supply the context I can't see. It should stay open to evidence.</p>
+      <p class="belief">Understanding someone isn't the same as signing up for a relationship with them. I can get exactly why things are the way they are and still decide it isn't what I want.</p>
+      <p class="belief">Leaving doesn't require a verdict that the other person is bad. Sometimes the regard just isn't mutual anymore, and that's reason enough.</p>
 
-      <p class="sec">On doing vs. consuming</p>
-      <p class="belief">I'd rather do the thing than eat about it. New city, and I find the climbing gym before the good restaurants. I'm trying to collect afternoons, not meals.</p>
+      <p class="sec">On measuring things</p>
+      <p class="belief"><span class="star">*</span> How you choose to measure something is a quiet admission of what you're willing to be honest about. Half of what I do is turning <em>we can't really know that</em> into a number someone will act on.</p>
+      <p class="belief">An estimate nobody checks is a feeling in a lab coat.</p>
+
+      <p class="sec">On honesty</p>
+      <p class="belief">I want to tell the truth whenever I get the chance. But saying what I believe and doing the work to find out whether I <em>should</em> believe it are two different jobs, and I need both.</p>
+      <p class="belief">Being honest about how I feel doesn't make my read of someone else's motives correct.</p>
+
+      <p class="sec">On arguing well</p>
+      <p class="belief"><span class="star">*</span> Some of my favourite nights were philosophy arguments in Ottawa bars. Disagreement can be a kind of hospitality — someone trusts you enough to hand over an unfinished thought and watch what you do with it.</p>
+      <p class="belief">A belief I never let anyone push on quietly goes stale. Hearing the other side isn't about everyone being equally right; it's that mine is probably partial.</p>
+
+      <p class="sec">On keeping love around</p>
+      <p class="belief"><span class="star">*</span> Build a life with love in more than one corner of it. Friends count as flourishing, not decoration.</p>
+      <p class="belief">When something's hard, go help someone else who's having a hard time. Buy them dinner, talk. The help doesn't have to fix anything.</p>
+      <p class="belief">Take two days off to see someone you love. Then take a third.</p>
     </article>
 
-    <article class="note" id="working-modes">
-      <p class="tag">Ongoing</p>
-      <h1>Working Modes</h1>
-      <p class="sub">How I actually get things done, when I'm honest about it.</p>
-      <p class="belief">Placeholder — e.g. "I think with my hands; I need to build the rough thing before I can tell you what it should be."</p>
+    <article class="note" id="wow">
+      <p class="tag">Microblog</p>
+      <h1>Things I still want to do</h1>
+      <p class="sub">Short list, kept so I don't forget to actually go.</p>
+      <p class="belief">Solo hikes. A real portage trip. Night cross-country skiing.</p>
+      <p class="belief">Find a sky dark enough that it stops reading as background.</p>
     </article>
 
     <article class="note" id="guestbook">

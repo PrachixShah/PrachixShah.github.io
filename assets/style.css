@@ -4,11 +4,11 @@
    ========================================================= */
 
 :root {
-  --paper:      #FBF6EE;
-  --paper-2:    #F4EBDD;
+  --paper:      #F7F0E0;
+  --paper-2:    #EFE6D2;
   --ink:        #211C16;
   --muted:      #6E6458;
-  --rule:       #E3D8C7;
+  --rule:       #E6DBC4;
   --accent:     #B4512C;
   --accent-bg:  #F3E4D9;
   --shadow:     rgba(33, 28, 22, 0.08);
@@ -21,28 +21,8 @@
   --wide: 60rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper:     #14110D;
-    --paper-2:   #1C1813;
-    --ink:       #EFE7DA;
-    --muted:     #9C9284;
-    --rule:      #302A22;
-    --accent:    #E4906A;
-    --accent-bg: #2A211A;
-    --shadow:    rgba(0, 0, 0, 0.4);
-  }
-}
-:root[data-theme="dark"] {
-  --paper:     #14110D;
-  --paper-2:   #1C1813;
-  --ink:       #EFE7DA;
-  --muted:     #9C9284;
-  --rule:      #302A22;
-  --accent:    #E4906A;
-  --accent-bg: #2A211A;
-  --shadow:    rgba(0, 0, 0, 0.4);
-}
+/* Pinned to the cream light palette — automatic dark-mode switch removed by request.
+   To bring dark mode back, restore the @media (prefers-color-scheme: dark) block. */
 
 *, *::before, *::after { box-sizing: border-box; }
 

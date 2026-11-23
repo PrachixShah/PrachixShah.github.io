@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Log — Prachi Shah</title>
+<meta name="description" content="Dated entries from Prachi Shah — engineering notes, term reports, and whatever else is on the bench.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Prachi Shah<span>.</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Lab &amp; Projects</a>
+      <a href="resume.html">Résumé</a>
+      <a href="log.html" aria-current="page">The Log</a>
+      <a href="bucketlist.html">Bucket List</a>
+      <a href="photos.html">Photos</a>
+      <a href="ethos.html">Ethos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="wrap page-head">
+  <p class="meta">Field notes</p>
+  <h1>The Log</h1>
+  <div class="rule"></div>
+  <p class="lede">Newest at the top. Engineering when there’s engineering, otherwise whatever was actually happening. No schedule, no subscribe button, no “hey it’s been a while.”</p>
+</section>
+
+<section class="wrap">
+
+<!-- =====================================================================
+     HOW TO ADD AN ENTRY
+     Copy the template below, paste it directly under this comment so it
+     lands at the top, and fill it in. The id is what the link on the
+     home page points at, so keep it short and lowercase-with-dashes.
+
+     <article class="entry" id="SHORT-NAME">
+       <p class="meta">1 January 2027</p>
+       <h2>Title goes here</h2>
+       <div class="prose stack">
+         <p>First paragraph.</p>
+         <p>Second paragraph.</p>
+       </div>
+       <figure>
+         <img src="assets/img/FILENAME.jpg" alt="Describe the photo">
+         <figcaption>Caption.</figcaption>
+       </figure>
+     </article>
+     ===================================================================== -->
+
+<!-- ---------- ENTRY ---------- -->
+<article class="entry" id="hello">
+  <p class="meta">18 September 2026</p>
+  <h2>Why this site exists</h2>
+  <div class="prose stack">
+    <p>Short version: I kept losing things.</p>
+    <p>Not files — I’m fine with files. I mean the reasoning. The specific reason we chose one topology over another, the afternoon where the measurement disagreed with the model and it turned out the model was right for a stupid reason, the photo of the wafer before it went into the etcher. Six months later all of that compresses down to one line on a résumé, and the line is true but it’s dead. Nobody can tell from it whether I understood what I was doing or just followed a lab manual.</p>
+    <p>So: a place to write it down while it’s still warm. Projects get real write-ups with the parts that didn’t work left in. Everything else goes in here.</p>
+    <p>Fair warning that the non-engineering half is going to be about 40% photographs of things at high magnification and 60% lists.</p>
+  </div>
+</article>
+
+<!-- ---------- ENTRY ---------- -->
+<article class="entry" id="funded">
+  <p class="meta">September 2026</p>
+  <h2>We got the maser funded</h2>
+  <div class="prose stack">
+    <p>The Engineers of the Future Fund said yes, which means the capstone is real now and not just a very confident slide deck.</p>
+    <p>The hard part of the proposal wasn’t the budget. It was that “maser” carries a particular image — a cryostat, a vacuum pump, a physics department, 1960. You say the word and people mentally file it next to <em>interesting but impractical</em>. The whole pitch had to start by dismantling that: room temperature, an organic gain medium, and an LED as the pump rather than a laser. Cheap, roughly speaking. Small.</p>
+    <p>What I’m building inside it is the pulsed high-current driver for that LED — programmable pulse width and repetition rate, because the pump timing is one of the few knobs we actually have — and the RF signal chain hanging off the output at around 1.45&nbsp;GHz. The goal isn’t just emission. It’s sending something over it.</p>
+    <p>Right now it’s architecture and block diagrams and arguing about interfaces. The bench work is a winter problem. <a href="projects.html#maser">The project page has the technical version.</a></p>
+  </div>
+  <figure>
+    <div class="slot">assets/img/maser-whiteboard.jpg — the whiteboard from the day we settled the architecture</div>
+    <figcaption>Photograph your whiteboards. You will not remember why the arrow went that way.</figcaption>
+  </figure>
+</article>
+
+<!-- ---------- ENTRY ---------- -->
+<article class="entry" id="eight-months">
+  <p class="meta">August 2026</p>
+  <h2>Eight months of fringes</h2>
+  <div class="prose stack">
+    <p>The co-op term at Lumentum ended and I’ve been trying to work out what I actually took away from it, beyond the line items.</p>
+    <p>I think it’s this: the gap between <em>a measurement</em> and <em>a measurement anyone will act on</em> is enormous, and almost none of that gap is in the maths. Getting a number out of an FFT took a couple of weeks. Convincing myself — and then a room of people whose manufacturing decisions depended on it — that the number was physically real took the rest of the term. Modelling how the liquid crystal indices should move with temperature. Predicting how the probe angle biases the result, then designing the experiment that catches it doing exactly that. None of it changed the answer. All of it changed whether the answer counted.</p>
+    <p>The second thing, which I resisted for a while: constraints are the interesting part. On the machine vision work, the accuracy problem is boring — you can always find the corner if you don’t care how long it takes. The problem only becomes real when there’s a cycle time on the line and you have to know which method loses you the least accuracy per millisecond. I spent a long time in school optimising things with no budget attached. That’s not the job.</p>
+    <p>Also I now notice interference fringes everywhere. Oil on puddles. Phone screen protectors. It doesn’t go away.</p>
+  </div>
+</article>
+
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="links">
+      <a href="mailto:shahprachi.sap@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/prachixsh">LinkedIn</a>
+      <a href="https://github.com/PrachixShah">GitHub</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+    <p>Built by hand, hosted on GitHub Pages. Last touched November 2026.</p>
+  </div>
+</footer>
+
+</body>
+</html>

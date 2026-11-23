@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab &amp; Projects — Prachi Shah</title>
+<meta name="description" content="Lab work and built projects: LCoS cell gap metrology, a room-temperature maser, an RF low-noise amplifier, an RTOS kernel, a QCM controller, MEMS actuators fabricated in a cleanroom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Prachi Shah<span>.</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html" aria-current="page">Lab &amp; Projects</a>
+      <a href="resume.html">Résumé</a>
+      <a href="log.html">The Log</a>
+      <a href="bucketlist.html">Bucket List</a>
+      <a href="photos.html">Photos</a>
+      <a href="ethos.html">Ethos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="wrap page-head">
+  <p class="meta">Portfolio</p>
+  <h1>Lab &amp; Projects</h1>
+  <div class="rule"></div>
+  <p class="lede">Roughly reverse-chronological. Each one is written as: what was actually wrong, what I did about it, and where it stands. The ones still in progress say so.</p>
+</section>
+
+<section class="wrap">
+
+<!-- =====================================================================
+     HOW TO ADD A PROJECT
+     Copy one <article class="entry"> ... </article> block, paste it where
+     you want it, change the id, title, tags and text. Photos go in
+     assets/img/ and get referenced with <img src="assets/img/name.jpg">.
+     ===================================================================== -->
+
+<!-- ---------- 1. CELL GAP METROLOGY ---------- -->
+<article class="entry" id="cell-gap">
+  <p class="kicker">Lumentum · Optical Systems Engineering · Jan–Aug 2026</p>
+  <h2>Making LCoS cell gap directly measurable</h2>
+  <ul class="tags">
+    <li class="tag hot">Flagship</li>
+    <li class="tag">Spectral interferometry</li>
+    <li class="tag">Fabry–Pérot</li>
+    <li class="tag">FFT</li>
+    <li class="tag">Liquid crystal</li>
+    <li class="tag">Python</li>
+  </ul>
+
+  <div class="beat">
+    <span class="beat-label">The problem</span>
+    <p>Cell gap uniformity on an LCoS panel governs how the display behaves, and the team had no way to measure it directly. It was assessed through secondary, inferential methods. Lumentum was bringing LCoS manufacturing in-house, which meant that proxy had to become a real number with real process-control value.</p>
+  </div>
+
+  <div class="beat">
+    <span class="beat-label">The physics</span>
+    <p>The cell — glass, then the gap, then the silicon backplane — is a Fabry–Pérot etalon. Illuminate it broadband and the reflected spectrum carries interference fringes that are periodic in wavenumber, with period Δk&nbsp;=&nbsp;1/(2<em>nd</em>). Take an FFT of intensity against wavenumber and a peak appears at the optical path length 2<em>nd</em>.</p>
+    <p>For an empty cell <em>n</em>&nbsp;≈&nbsp;1, so that peak <em>is</em> the thickness. For a filled cell it isn’t: liquid crystal is birefringent, the supplier’s index values weren’t trustworthy, and a single measurement leaves <em>n</em> and <em>d</em> degenerate.</p>
+  </div>
+
+  <div class="beat">
+    <span class="beat-label">The move</span>
+    <p>The gasket. It sits right there in the part, it has a known and fixed thickness, and it sees the same optical path. Using it as an in-part reference breaks the degeneracy and lets both unknowns come out of one measurement — no separate calibration artifact, no trusting the datasheet.</p>
+  </div>
+
+  <div class="beat">
+    <span class="beat-label">Validation</span>
+    <p>Numbers that come out of an FFT are easy to believe and easy to be wrong about. I modelled the temperature dependence of the liquid crystal indices — Δ<em>n</em> collapses as you approach the nematic–isotropic transition — and checked that the extracted values moved the way physics says they should. Separately, I modelled how optical probe incidence angle biases the measurement, then designed and ran experiments on the station that confirmed the predicted error and set the tolerances.</p>
+  </div>
+
+  <div class="beat">
+    <span class="beat-label">Result</span>
+    <p>Full-panel cell-gap surface maps from grid measurements — an inferential proxy replaced by a direct measurement, feeding a live manufacturing qualification decision.</p>
+  </div>
+
+  <figure>
+    <div class="slot">assets/img/cellgap-fringes.png — reflected spectrum with fringes, and the FFT beside it</div>
+    <figcaption>Fig. 1 — Add the fringe spectrum and its transform here. Anything under NDA stays off; a schematic redraw of the etalon geometry works just as well.</figcaption>
+  </figure>
+</article>
+
+<!-- ---------- 2. MASER ---------- -->
+<article class="entry" id="maser">
+  <p class="kicker">Capstone · NE 408 · Sept 2026 – Apr 2027 · In progress</p>
+  <h2>A room-temperature maser, pumped by an LED</h2>
+  <ul class="tags">
+    <li class="tag">RF front end</li>
+    <li class="tag">Pulsed power</li>
+    <li class="tag">1.45 GHz</li>
+    <li class="tag">Systems integration</li>
+    <li class="tag">Team lead</li>
+  </ul>
+
+  <div class="beat">
+    <span class="beat-label">What it is</span>
+    <p>Masers have a reputation for cryostats and vacuum. A line of work out of Imperial College London showed you can get stimulated microwave emission at room temperature from an organic gain medium pumped optically — and that the pump can be an LED rather than a laser. We’re building one, and then trying to send something over it.</p>
+  </div>
+
+  <div class="beat">
+    <span class="beat-label">My part</span>
+    <p>I lead the team across optics, RF electronics and systems integration, and personally own two subsystems: the pulsed high-current LED pump driver, with programmable pulse width and repetition rate, and the ~1.45&nbsp;GHz microwave signal chain on the output side. I also own the interfaces between the optical pump, the RF chain and the control electronics — the part that quietly breaks every time the architecture changes.</p>
+  </div>
+
+  <div class="beat">
+    <span class="beat-label">Before any of that</span>
+    <p>Technical literature review and market research to pin down what the system actually had to do, then Business and Customer Value Proposition analyses behind the design decisions. The proposals and presentations secured additional funding through Waterloo’s Engineers of the Future Fund.</p>
+  </div>
+
+  <div class="beat">
+    <span class="beat-label">Where it stands</span>
+    <p>Architecture and design reasoning. Pump driver topology selected, RF chain budgeted. Bench validation and the communication demonstration land in the winter term. <a href="log.html#funded">I wrote about the funding round here.</a></p>
+  </div>
+
+  <figure>
+    <div class="slot">assets/img/maser-blockdiagram.png — system block diagram</div>
+    <figcaption>Fig. 2 — A clean block diagram of pump → cavity → RF chain reads better here than a photo of a breadboard. Add the breadboard anyway.</figcaption>
+  </figure>
+</article>
+
+<!-- ---------- 3. LNA ---------- -->
+<article class="entry" id="lna">
+  <p class="kicker">ECE 373 · Radio Frequency &amp; Microwave Circuits · Fall 2026</p>
+  <h2>An HF low-noise amplifier, all the way to measured</h2>
+  <ul class="tags">
+    <li class="tag">Keysight ADS</li>
+    <li class="tag">Matching networks</li>
+    <li class="tag">S-parameters</li>
+    <li class="tag">Noise figure</li>
+    <li class="tag">Fabricated</li>
+  </ul>
+  <p>Design, simulate, fabricate, measure, reconcile. The whole RF loop closed on one board: matching-network synthesis and stability analysis in ADS, then layout, then actual bench characterization of the fabricated amplifier.</p>
+  <p>The interesting part is never the simulation. It’s the gap — measured S-parameters and noise figure against what ADS promised, and having an honest account of where the parasitics and board effects ate the difference.</p>
+  <p class="entry-note">Write-up in progress; simulated-vs-measured plots go here once the last bench session is done.</p>
+  <figure>
+    <div class="slot">assets/img/lna-sparams.png — simulated vs. measured S21 and NF</div>
+    <figcaption>Fig. 3 — Two traces on one axis, simulation dashed. This is the plot people actually want to see.</figcaption>
+  </figure>
+</article>
+
+<!-- ---------- 4. RTOS ---------- -->
+<article class="entry" id="rtos">
+  <p class="kicker">MTE 241 · Computer Structures &amp; Real-Time Systems · Fall 2026</p>
+  <h2>Writing a real-time kernel from nothing</h2>
+  <ul class="tags">
+    <li class="tag">C</li>
+    <li class="tag">STM32F401RE</li>
+    <li class="tag">ARM Cortex-M4</li>
+    <li class="tag">EDF scheduling</li>
+    <li class="tag">Concurrency</li>
+  </ul>
+  <p>A working RTX kernel in C on bare-metal Cortex-M4 — stack and process creation, context switching, and both fixed-priority and earliest-deadline-first scheduling, built up lab by lab from memory-mapped I/O to a running multitasking system.</p>
+  <p>Then the classic ways concurrency kills you: semaphores, mutexes and barriers, with priority-inversion and deadlock handling, validated against producer-consumer and readers-writers workloads. Individual work, which is the point — there’s nowhere to hide in a context switch that doesn’t restore correctly.</p>
+  <div class="beat">
+    <span class="beat-label">Worth documenting</span>
+    <p>The scheduling policy, the context-switch approach, and exactly how priority inversion is handled. Those three answers are the whole interview.</p>
+  </div>
+</article>
+
+<!-- ---------- 5. QCM ---------- -->
+<article class="entry" id="qcm">
+  <p class="kicker">NE 454A / 455A · Nano-Electronics Laboratory · Fall 2026 – Winter 2027 · In progress</p>
+  <h2>Replacing a commercial QCM controller with my own instrument</h2>
+  <ul class="tags">
+    <li class="tag">Pierce oscillator</li>
+    <li class="tag">PSpice</li>
+    <li class="tag">EAGLE CAD</li>
+    <li class="tag">2-layer PCB</li>
+    <li class="tag">Drift &amp; noise</li>
+  </ul>
+  <p>A quartz crystal microbalance measures mass by watching a resonant frequency shift. The controller module that drives it is a box you buy. This year I’m building one instead: a Pierce oscillator designed in PSpice with the filter stages around it, laid out as a two-layer PCB in EAGLE, and sent out for commercial fabrication.</p>
+  <p>Winter term is bring-up: through-hole and surface-mount assembly by hand, thirty-minute stability runs measuring drift in Hz/min and noise, debugging whatever that reveals, then validation on real chemistry — nonanethiol monolayer formation on gold, solvent vapour partitioning into a monolayer-protected-cluster film, and sustained oscillation with the crystal immersed in water. Finally, head to head against the commercial unit.</p>
+  <p class="entry-note">Design and layout complete, board at fab. This is the one that gets a proper write-up with numbers in it.</p>
+  <figure>
+    <div class="slot">assets/img/qcm-pcb.png — EAGLE layout, and the bare board when it arrives</div>
+    <figcaption>Fig. 4 — Layout render next to the populated board is a satisfying pair. Take the photo before you solder anything.</figcaption>
+  </figure>
+</article>
+
+<!-- ---------- 6. MEMS ---------- -->
+<article class="entry" id="mems">
+  <p class="kicker">NE 454B / 455B · Nano-Instrumentation Laboratory · Fall 2026 – Winter 2027 · In progress</p>
+  <h2>MEMS actuators, from FEM to four masks in the cleanroom</h2>
+  <ul class="tags">
+    <li class="tag">COMSOL</li>
+    <li class="tag">LayoutEditor</li>
+    <li class="tag">Photolithography</li>
+    <li class="tag">PECVD</li>
+    <li class="tag">RIE</li>
+    <li class="tag">Probe test</li>
+  </ul>
+  <p>Design MEMS actuators against a requirements-and-constraints spec — 2D and 3D FEM in COMSOL Multiphysics alongside lumped models, feasibility assessed before anything gets committed — then generate the mask layout in LayoutEditor to the design rules of a real multi-user microfabrication process.</p>
+  <p>The winter term is the rare part: I fabricate my own masks. Four mask levels — four-point-probe sheet resistance on chromium, photolithography and wet etch, PECVD silicon nitride, RIE, a sacrificial layer, aluminium deposition, then sacrificial release — followed by visual inspection and precision IC prober testing.</p>
+  <blockquote>Design → FEM → mask layout → cleanroom fabrication → probe test isn’t a proxy for the MEMS engineer workflow. It is the workflow.</blockquote>
+  <figure>
+    <div class="slot">assets/img/mems-layout.png — mask layout, and a micrograph of the released device</div>
+    <figcaption>Fig. 5 — Layout on the left, micrograph on the right. Devices that failed release are more interesting than the ones that didn’t.</figcaption>
+  </figure>
+</article>
+
+<!-- ---------- 7. MACHINE VISION ---------- -->
+<article class="entry" id="vision">
+  <p class="kicker">Lumentum · Jan–Aug 2026</p>
+  <h2>Corner detection against a cycle-time budget</h2>
+  <ul class="tags">
+    <li class="tag">Machine vision</li>
+    <li class="tag">Template matching</li>
+    <li class="tag">Production</li>
+    <li class="tag">OpenCV</li>
+  </ul>
+  <p>Finding panel corners accurately is a solved problem if you have unlimited time. On a production line you don’t. I benchmarked template matching against voltage-programmed image differencing on the accuracy-versus-speed tradeoff, and optimised for the best accuracy that fit inside the cycle time — rather than the best accuracy full stop.</p>
+  <p>Alongside it: Python functionality inside a C# production test application for powered-on quality testing, configuring devices from firmware documentation through new-unit integration and failure testing; and an automated data path that turned raw production output into population statistics and a manufacturing-health call I presented to the team myself.</p>
+</article>
+
+<!-- ---------- 8. CONTAMINATION ---------- -->
+<article class="entry" id="contamination">
+  <p class="kicker">Lumentum · Jan–Aug 2026</p>
+  <h2>A contamination investigation that came down to microscope optics</h2>
+  <ul class="tags">
+    <li class="tag">Failure analysis</li>
+    <li class="tag">Surface chemistry</li>
+    <li class="tag">Optical microscopy</li>
+    <li class="tag">Timelapse</li>
+  </ul>
+  <p>Diagnosing a contamination failure signature under an optical microscope is mostly a question of designing the right look. Aperture size and working distance decide what you can see; surface chemistry decides what you should expect. I used both to design a targeted investigation, then built timelapse imaging recipes that captured particle migration over time — which is the evidence that actually distinguishes between root causes.</p>
+</article>
+
+<!-- ---------- 9. BET / METHANE ---------- -->
+<article class="entry" id="bet">
+  <p class="kicker">Natural Resources Canada · Research Assistant · Jan–Apr 2024</p>
+  <h2>When the material is fine and the measurement is lying</h2>
+  <ul class="tags">
+    <li class="tag">Porous carbons</li>
+    <li class="tag">CH₄ adsorption</li>
+    <li class="tag">BET</li>
+    <li class="tag">Micropores</li>
+    <li class="tag">Python</li>
+  </ul>
+  <p>Activated carbons for methane adsorption, aimed at Canadian oil sands applications. I designed the activation-experiment matrix — physical versus chemical routes across temperature, pressure, acid concentration and duration — and built the analysis pipeline in Python.</p>
+  <p>Then the results stopped making sense: N₂ BET surface area disagreed with measured methane uptake. The materials weren’t the problem. Standard BET runs nitrogen at 77&nbsp;K, and at cryogenic temperature N₂ doesn’t have the thermal energy to equilibrate into narrow micropores — activated diffusion, non-equilibrium isotherms, undercounted micropore volume. Methane cares about pores in roughly the 0.7–1.5&nbsp;nm range, which is precisely where that undercount lives.</p>
+  <p>The fix is CO₂ at 273&nbsp;K: nearly two hundred kelvin warmer, and a smaller probe molecule besides. The deeper point is that BET theory assumes multilayer adsorption on an open surface while micropore filling is a volume-filling process — a “BET surface area” for activated carbon is an apparent number by convention. I revised the analysis to resolve the pore population that actually governs performance.</p>
+  <blockquote>The first instinct is to blame the sample. It’s worth asking whether the instrument can see what you’re asking it about.</blockquote>
+</article>
+
+<!-- ---------- 10. LAB COURSES ---------- -->
+<article class="entry" id="labs">
+  <p class="kicker">Selected laboratory coursework</p>
+  <h2>Time in the lab</h2>
+  <p>Lab courses are where my transcript and my actual ability agree with each other. Listed with grades, because they’re the honest signal.</p>
+  <div class="skills">
+    <div><b>NE 340L — Microfabrication &amp; Thin-Film Technology · 92</b>Full process flow: photolithography, plasma etch, PECVD and sputtered thin-film deposition, film metrology and electrical test, with process-variation analysis across the resulting devices.</div>
+    <div><b>NE 220L — Materials Science &amp; Engineering · 88</b></div>
+    <div><b>NE 226L — Laboratory Characterization Methods · 88</b></div>
+    <div><b>NE 330L — Macromolecular Science · 87</b></div>
+    <div><b>NE 320L — Characterization of Materials · 84</b></div>
+    <div><b>NE 318 — Continuum Mechanics · 96</b></div>
+  </div>
+  <p style="margin-top:2rem"><a class="btn" href="resume.html">See the full résumé</a></p>
+</article>
+
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="links">
+      <a href="mailto:shahprachi.sap@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/prachixsh">LinkedIn</a>
+      <a href="https://github.com/PrachixShah">GitHub</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+    <p>Built by hand, hosted on GitHub Pages. Last touched November 2026.</p>
+  </div>
+</footer>
+
+</body>
+</html>

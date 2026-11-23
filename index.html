@@ -1,13 +1,139 @@
-<html lang ="en"
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
-    <title>Document</title>
-    <link rel = "stylesheet" href="styles.css">
-</head>>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prachi Shah</title>
+<meta name="description" content="Prachi Shah — nanotechnology engineering at Waterloo. Devices, the instruments that measure them, and the processes that make them. Plus a running log of everything else.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◐</text></svg>">
+</head>
 <body>
-    <h1>Prachi Shah</h1>
-    <p>frgifjnrigjrgjrjigjri</p>
+
+<!-- ============ NAV (same on every page — keep them in sync) ============ -->
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">Prachi Shah<span>.</span></a>
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="projects.html">Lab &amp; Projects</a>
+      <a href="resume.html">Résumé</a>
+      <a href="log.html">The Log</a>
+      <a href="bucketlist.html">Bucket List</a>
+      <a href="photos.html">Photos</a>
+      <a href="ethos.html">Ethos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="wrap hero">
+  <p class="meta">Waterloo, Ontario · Nanotechnology Engineering ’27</p>
+  <h1>I build small things,<br>and the instruments<br>that can see them.</h1>
+  <div class="rule"></div>
+  <p class="lede">Nanotechnology engineering at the University of Waterloo, six co-op terms deep. I work at the seam where a physical device, the measurement that characterizes it, and the process that manufactures it all have to agree with each other.</p>
+  <p class="lede">This site is half portfolio, half field notebook. The lab work is on the left; everything else — the bucket list, the photo dumps, the half-formed thoughts — is on the right.</p>
+</section>
+
+<section class="wrap">
+  <div class="cards">
+    <a class="card" href="projects.html">
+      <h3>Lab &amp; Projects</h3>
+      <p>Cell gap metrology, a maser, an RTOS kernel, a PCB I sent to fab. Written up properly, with the parts that didn’t work.</p>
+    </a>
+    <a class="card" href="resume.html">
+      <h3>Résumé</h3>
+      <p>The one-page version, plus a PDF if you need it for a system that eats PDFs.</p>
+    </a>
+    <a class="card" href="log.html">
+      <h3>The Log</h3>
+      <p>Dated entries. Some engineering, some not. No posting schedule and no newsletter.</p>
+    </a>
+    <a class="card" href="bucketlist.html">
+      <h3>Bucket List</h3>
+      <p>A running list, honestly maintained. Struck through when done.</p>
+    </a>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="wrap">
+  <h2>The longer version</h2>
+  <div class="prose stack">
+    <p>I’m in my fourth year of Nanotechnology Engineering at Waterloo, graduating in April 2027. It’s a program that never picks a lane — one term you’re solving Schrödinger’s equation for a quantum dot, the next you’re gowning up to run photolithography, the next you’re writing a context switcher in C on a Cortex-M4. For a long time I treated that as a problem to be solved. I’ve stopped.</p>
+
+    <p>What actually connects it is measurement. The thing I keep being drawn to is the moment where someone says <em>we can’t measure that directly, so we infer it</em> — and it turns out you can, if you’re willing to think carefully about the physics for a week. At Lumentum I spent eight months on exactly that: an LCoS panel property the team had only ever estimated, turned into a real number with a real map across the panel.</p>
+
+    <p>I’m better in a lab than in an exam hall, and my transcript says so plainly. Lab courses land in the high 80s and low 90s; lectures don’t. I’ve made peace with that too. If you want to know whether I can do something, the honest answer is usually on the <a href="projects.html">projects page</a> rather than in a grade.</p>
+
+    <p>Outside of that: I take a lot of photographs of things that are too small or too orange to photograph well, I keep a <a href="bucketlist.html">list</a>, and I’m trying to get better at writing things down while they’re still fresh instead of six months later.</p>
+  </div>
+
+  <p class="pull">Most engineers own the device, or the measurement, or the process. I got handed all three by accident and decided to keep them.</p>
+</section>
+
+<!-- ============ CURRENTLY ============ -->
+<section class="wrap">
+  <h2>Currently</h2>
+  <div class="prose">
+    <div class="beat">
+      <span class="beat-label">Term</span>
+      4A at Waterloo — RF &amp; microwave circuits, real-time systems, nano-electronics, MEMS design, and two lab courses that both end in something I get to hold.
+    </div>
+    <div class="beat">
+      <span class="beat-label">Capstone</span>
+      Leading a room-temperature, LED-pumped solid-state maser. I own the pulsed pump driver and the ~1.45&nbsp;GHz RF front end. <a href="projects.html#maser">Details →</a>
+    </div>
+    <div class="beat">
+      <span class="beat-label">Just finished</span>
+      Eight months at Lumentum on optical systems engineering — cell gap metrology, production machine vision, and a contamination investigation that came down to microscope optics.
+    </div>
+    <div class="beat">
+      <span class="beat-label">Looking for</span>
+      New grad roles starting mid-2027 in MEMS, RF, or semiconductor metrology. Canadian citizen, TN-eligible. <a href="mailto:shahprachi.sap@gmail.com">Say hello.</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECENT FROM THE LOG ============ -->
+<!-- Keep this in sync by hand with the top of log.html — three most recent is plenty. -->
+<section class="wrap">
+  <h2>Lately, from the log</h2>
+  <div class="cards">
+    <a class="card" href="log.html#funded">
+      <h3>We got the maser funded</h3>
+      <p>September 2026 — On writing a proposal for a device most people assume needs liquid helium.</p>
+    </a>
+    <a class="card" href="log.html#eight-months">
+      <h3>Eight months of fringes</h3>
+      <p>August 2026 — What a co-op term at an optics company actually taught me.</p>
+    </a>
+    <a class="card" href="log.html#hello">
+      <h3>Why this site exists</h3>
+      <p>September 2026 — Short version: I kept losing things.</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (same on every page) ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="links">
+      <a href="mailto:shahprachi.sap@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/prachixsh">LinkedIn</a>
+      <a href="https://github.com/PrachixShah">GitHub</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+    <p>Built by hand, hosted on GitHub Pages. Last touched November 2026.</p>
+  </div>
+</footer>
+
 </body>
 </html>

@@ -18,9 +18,10 @@
     <a class="wordmark" href="index.html">Prachi Shah<span>.</span></a>
     <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="projects.html">Lab &amp; Projects</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">projects</a>
       <a href="resume.html" aria-current="page">Résumé</a>
-      <a href="log.html">The Log</a>
+      <a href="log.html">log</a>
       <a href="bucketlist.html">Bucket List</a>
       <a href="photos.html">Photos</a>
       <a href="ethos.html">Ethos</a>
@@ -45,18 +46,19 @@
 
 <h2>Experience</h2>
 
+<!-- COPY-PASTE BLOCK: one .rsm-item per role. Plain bullets: what you did, how, what came of it. -->
 <div class="rsm-item">
   <div class="rsm-head">
     <h3>Optical Systems Engineering Co-op <span class="rsm-where">— Lumentum</span></h3>
     <span class="rsm-when">Jan – Aug 2026</span>
   </div>
   <ul>
-    <li><strong>Made LCoS cell gap directly measurable for the first time</strong>, replacing the indirect proxy the team had been relying on — modelled the cell as a Fabry–Pérot etalon, recovered optical path length by FFT of the reflected spectrum, and broke the index–thickness degeneracy using a co-located gasket of known thickness, delivering <strong>full-panel cell-gap surface maps</strong> to qualify manufacturing being brought in-house.</li>
-    <li><strong>Proved the new measurement was physically real</strong> by modelling liquid-crystal birefringence against temperature toward the nematic–isotropic transition, and <strong>set the station’s measurement tolerances</strong> by predicting optical probe incidence-angle error and designing the experiments that confirmed it.</li>
-    <li><strong>Hit a production cycle-time budget on LCoS panel corner detection</strong> by benchmarking template matching against voltage-programmed image differencing on the accuracy-versus-speed tradeoff, rather than optimising accuracy offline.</li>
-    <li><strong>Extended production test coverage to new LCoS units</strong> by building and maintaining Python functionality inside a C# production test application, configuring devices from firmware documentation through integration and failure testing.</li>
-    <li><strong>Turned raw production output into the manufacturing-health call the team acted on</strong> — automated the data path, computed population statistics, and presented the findings myself.</li>
-    <li><strong>Found the source of a contamination failure</strong> by designing a targeted investigation from surface chemistry and microscope optics (aperture, working distance), and building timelapse imaging recipes that captured particle migration.</li>
+    <li>Built a direct measurement of LCoS cell gap, which the team had only been estimating. Modelled the cell as a Fabry–Pérot etalon, got optical path length from an FFT of the reflected spectrum, and used the gasket’s known thickness to separate index from thickness. Produced full-panel cell gap maps used to qualify in-house manufacturing.</li>
+    <li>Checked the measurement against physics by modelling how LC birefringence changes with temperature. Set the station’s tolerances by predicting probe angle error and testing it.</li>
+    <li>Benchmarked template matching against image differencing to pick a panel corner detection method that fit the production cycle time.</li>
+    <li>Added Python support for new LCoS units to a C# production test app, from firmware docs through integration and failure testing.</li>
+    <li>Automated the production data pipeline, ran population stats, and presented the manufacturing health results to the team.</li>
+    <li>Found the source of a contamination failure. Designed the investigation around surface chemistry and microscope optics, and set up timelapse imaging to track particle migration.</li>
   </ul>
 </div>
 
@@ -66,8 +68,8 @@
     <span class="rsm-when">Sept 2024 – Apr 2025</span>
   </div>
   <ul>
-    <li><strong>Made laboratory experiments run unattended</strong> — Python automation integrating instrumentation with real-time data collection, turning lab requirements into production-grade software for autonomous experimentation.</li>
-    <li><strong>Removed manual measurement from materials-characterization workflows</strong> with OpenCV tooling: segmentation, thresholding, feature extraction and template matching.</li>
+    <li>Wrote Python automation that connected lab instruments and logged data in real time, so experiments could run unattended.</li>
+    <li>Built OpenCV tools (segmentation, thresholding, feature extraction, template matching) to replace manual measurements in materials characterization.</li>
   </ul>
 </div>
 
@@ -77,8 +79,8 @@
     <span class="rsm-when">Jan – Apr 2024</span>
   </div>
   <ul>
-    <li><strong>Showed the problem was the measurement, not the material</strong> — traced a disagreement between N₂ BET surface area and measured CH₄ uptake to nitrogen’s failure to reach the micropores that govern adsorption at 77&nbsp;K, and rebuilt the Python analysis around it.</li>
-    <li><strong>Designed the activation-experiment matrix</strong> for porous carbons targeting methane adsorption in Canadian oil-sands applications — physical versus chemical activation across temperature, pressure, acid concentration and duration.</li>
+    <li>Found why N₂ BET surface area didn’t match measured methane uptake: at 77&nbsp;K, nitrogen can’t reach the micropores that control adsorption. Rebuilt the Python analysis to account for it.</li>
+    <li>Designed the activation experiment matrix for porous carbons (physical vs. chemical activation across temperature, pressure, acid concentration and time) for methane adsorption in oil sands applications.</li>
   </ul>
 </div>
 
@@ -88,8 +90,8 @@
     <span class="rsm-when">Jul – Sept 2023</span>
   </div>
   <ul>
-    <li><strong>Cut roughly 10 hours a week of manual test execution</strong> by moving an edtech platform’s QA from manual to automated Python driven through Jenkins, catching several critical defects before release.</li>
-    <li>Ran performance testing and worked 20–30 Jira issues per sprint across Agile release cycles — reproducing defects with developers, validating fixes, and covering user accessibility.</li>
+    <li>Moved QA for an edtech platform from manual to automated Python tests run through Jenkins. Saved about 10 hours a week and caught several critical bugs before release.</li>
+    <li>Did performance and accessibility testing and worked through 20–30 Jira tickets a sprint with the developers.</li>
   </ul>
 </div>
 
@@ -97,43 +99,21 @@
 
 <div class="rsm-item">
   <div class="rsm-head">
-    <h3>MASER Capstone — Room-Temperature LED-Pumped Solid-State Maser</h3>
-    <span class="rsm-when">Sept 2026 – Apr 2027</span>
-  </div>
-  <ul>
-    <li><strong>Leading a multidisciplinary team</strong> building a room-temperature, LED-pumped solid-state maser after recent Imperial College London work, coordinating optics, RF electronics and systems integration.</li>
-    <li><strong>Designing the pulsed high-current LED pump driver</strong> — programmable pulse width and repetition rate — and the <strong>~1.45&nbsp;GHz RF front end and microwave signal chain</strong>, working toward an end-to-end communication demonstration on the maser output.</li>
-    <li><strong>Secured additional project funding</strong> through the Engineers of the Future Fund with technical proposals and presentations, after defining system requirements from literature review and market research.</li>
-  </ul>
-</div>
-
-<div class="rsm-item">
-  <div class="rsm-head">
-    <h3>QCM Controller Replacement — Pierce Oscillator <span class="rsm-where">(NE 454A / 455A)</span></h3>
-    <span class="rsm-when">Fall 2026 – Winter 2027</span>
-  </div>
-  <ul>
-    <li><strong>Replacing a commercial quartz-crystal-microbalance controller with my own instrument</strong> — Pierce oscillator designed in PSpice, laid out as a two-layer PCB in EAGLE CAD and sent for commercial fabrication, then hand-assembled and characterized for drift (Hz/min) and noise before head-to-head validation against the commercial unit.</li>
-  </ul>
-</div>
-
-<div class="rsm-item">
-  <div class="rsm-head">
-    <h3>MEMS Actuator Design &amp; Cleanroom Fabrication <span class="rsm-where">(NE 454B / 455B)</span></h3>
-    <span class="rsm-when">Fall 2026 – Winter 2027</span>
-  </div>
-  <ul>
-    <li><strong>Designing MEMS actuators</strong> in COMSOL Multiphysics 2D/3D FEM with lumped models and laying out the <strong>masks in LayoutEditor</strong> to process design rules — then <strong>fabricating them across a four-mask cleanroom flow</strong> (photolithography, wet etch, PECVD, RIE, sacrificial release) with four-point-probe and precision IC prober characterization.</li>
-  </ul>
-</div>
-
-<div class="rsm-item">
-  <div class="rsm-head">
     <h3>RF Low-Noise Amplifier <span class="rsm-where">(ECE 373)</span></h3>
     <span class="rsm-when">Fall 2026</span>
   </div>
   <ul>
-    <li><strong>Designed, fabricated and measured an HF low-noise amplifier</strong> in Keysight ADS — matching-network synthesis and stability analysis through layout to bench characterization, reconciling measured S-parameters and noise figure against simulation.</li>
+    <li>Designed, fabricated and measured an HF low-noise amplifier in Keysight ADS, from matching networks and stability analysis through layout to bench measurement. Compared measured S-parameters and noise figure against simulation.</li>
+  </ul>
+</div>
+
+<div class="rsm-item">
+  <div class="rsm-head">
+    <h3>QCM Driver Oscillator <span class="rsm-where">(NE 454A)</span></h3>
+    <span class="rsm-when">Fall 2026</span>
+  </div>
+  <ul>
+    <li>Designed and built a 5.01&nbsp;MHz Colpitts crystal oscillator to drive a quartz crystal microbalance (hand calcs → PSpice → ADS → scope), with anti-parallel diodes to keep the amplitude from railing. Loaded the crystal with a 10&nbsp;µL water drop and adjusted the loop gain to bring the signal back within about 3%.</li>
   </ul>
 </div>
 
@@ -143,7 +123,28 @@
     <span class="rsm-when">Fall 2026</span>
   </div>
   <ul>
-    <li><strong>Wrote a working RTOS kernel from scratch in C</strong> on an STM32F401RE (ARM Cortex-M4) — stack and process creation, context switching, fixed-priority and earliest-deadline-first scheduling, semaphores and mutexes with priority-inversion and deadlock handling.</li>
+    <li>Wrote an RTOS kernel from scratch in C on an STM32F401RE (Cortex-M4): process creation, context switching, fixed-priority and EDF scheduling, semaphores and mutexes with priority inversion and deadlock handling.</li>
+  </ul>
+</div>
+
+<div class="rsm-item">
+  <div class="rsm-head">
+    <h3>Room-Temperature LED-Pumped Maser <span class="rsm-where">(Capstone)</span></h3>
+    <span class="rsm-when">Sept 2026 – Apr 2027</span>
+  </div>
+  <ul>
+    <li>On a five-person team building a room-temperature maser near 1.45&nbsp;GHz, pumped by a single LED. Responsible for getting the LED’s light into the crystal: compared two coupling geometries, ran the optical field simulations, and checked the LED spectrum against the crystal’s absorption.</li>
+    <li>Helped win funding from Waterloo’s Engineers of the Future Fund.</li>
+  </ul>
+</div>
+
+<div class="rsm-item">
+  <div class="rsm-head">
+    <h3>MEMS Actuator Design &amp; Cleanroom Fabrication <span class="rsm-where">(NE 454B / 455B)</span></h3>
+    <span class="rsm-when">Fall 2026 – Winter 2027</span>
+  </div>
+  <ul>
+    <li>Designing MEMS actuators in COMSOL, laying out the masks in LayoutEditor, and fabricating them myself across four mask levels in the cleanroom. Testing with a four-point probe and an IC prober.</li>
   </ul>
 </div>
 
@@ -153,7 +154,7 @@
     <span class="rsm-when">Fall 2026</span>
   </div>
   <ul>
-    <li><strong>Programmed a PLC conveyor-belt control system</strong> in simulation and on hardware, and built combinational and synchronous logic on FPGA in VHDL.</li>
+    <li>Programmed a PLC conveyor control system in simulation and on hardware, and built combinational and synchronous logic on an FPGA in VHDL.</li>
   </ul>
 </div>
 
@@ -185,7 +186,7 @@
 
 <hr>
 
-<p class="prose entry-note">Longer write-ups of most of the above live on the <a href="projects.html">projects page</a>, with the reasoning and the parts that didn’t work. If you’d rather just talk, <a href="mailto:shahprachi.sap@gmail.com">email is best</a>.</p>
+<p class="prose entry-note">Longer write-ups are on the <a href="projects.html">projects page</a>. Email is the easiest way to reach me: <a href="mailto:shahprachi.sap@gmail.com">shahprachi.sap@gmail.com</a>.</p>
 
 </section>
 </main>

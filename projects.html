@@ -18,9 +18,10 @@
     <a class="wordmark" href="index.html">Prachi Shah<span>.</span></a>
     <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="projects.html" aria-current="page">Lab &amp; Projects</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" aria-current="page">projects</a>
       <a href="resume.html">Résumé</a>
-      <a href="log.html">The Log</a>
+      <a href="log.html">log</a>
       <a href="bucketlist.html">Bucket List</a>
       <a href="photos.html">Photos</a>
       <a href="ethos.html">Ethos</a>
@@ -34,7 +35,7 @@
   <p class="meta">Portfolio</p>
   <h1>Lab &amp; Projects</h1>
   <div class="rule"></div>
-  <p class="lede">Roughly reverse-chronological. Each one is written as: what was actually wrong, what I did about it, and where it stands. The ones still in progress say so.</p>
+  <p class="lede">Roughly newest first. Each one covers what was wrong, what I did, and where it stands. The ones still in progress say so.</p>
 </section>
 
 <section class="wrap">
@@ -49,7 +50,7 @@
 <!-- ---------- 1. CELL GAP METROLOGY ---------- -->
 <article class="entry" id="cell-gap">
   <p class="kicker">Lumentum · Optical Systems Engineering · Jan–Aug 2026</p>
-  <h2>Making LCoS cell gap directly measurable</h2>
+  <h2>Measuring LCoS cell gap directly</h2>
   <ul class="tags">
     <li class="tag hot">Flagship</li>
     <li class="tag">Spectral interferometry</li>
@@ -60,23 +61,23 @@
   </ul>
 
   <div class="beat">
-    <span class="beat-label">The problem</span>
+    <span class="beat-label">Problem</span>
     <p>Cell gap uniformity on an LCoS panel governs how the display behaves, and the team had no way to measure it directly. It was assessed through secondary, inferential methods. Lumentum was bringing LCoS manufacturing in-house, which meant that proxy had to become a real number with real process-control value.</p>
   </div>
 
   <div class="beat">
-    <span class="beat-label">The physics</span>
+    <span class="beat-label">Physics</span>
     <p>The cell — glass, then the gap, then the silicon backplane — is a Fabry–Pérot etalon. Illuminate it broadband and the reflected spectrum carries interference fringes that are periodic in wavenumber, with period Δk&nbsp;=&nbsp;1/(2<em>nd</em>). Take an FFT of intensity against wavenumber and a peak appears at the optical path length 2<em>nd</em>.</p>
     <p>For an empty cell <em>n</em>&nbsp;≈&nbsp;1, so that peak <em>is</em> the thickness. For a filled cell it isn’t: liquid crystal is birefringent, the supplier’s index values weren’t trustworthy, and a single measurement leaves <em>n</em> and <em>d</em> degenerate.</p>
   </div>
 
   <div class="beat">
-    <span class="beat-label">The move</span>
+    <span class="beat-label">Approach</span>
     <p>The gasket. It sits right there in the part, it has a known and fixed thickness, and it sees the same optical path. Using it as an in-part reference breaks the degeneracy and lets both unknowns come out of one measurement — no separate calibration artifact, no trusting the datasheet.</p>
   </div>
 
   <div class="beat">
-    <span class="beat-label">Validation</span>
+    <span class="beat-label">Checking it</span>
     <p>Numbers that come out of an FFT are easy to believe and easy to be wrong about. I modelled the temperature dependence of the liquid crystal indices — Δ<em>n</em> collapses as you approach the nematic–isotropic transition — and checked that the extracted values moved the way physics says they should. Separately, I modelled how optical probe incidence angle biases the measurement, then designed and ran experiments on the station that confirmed the predicted error and set the tolerances.</p>
   </div>
 
@@ -94,7 +95,7 @@
 <!-- ---------- 2. MASER ---------- -->
 <article class="entry" id="maser">
   <p class="kicker">Capstone · NE 408 · Sept 2026 – Apr 2027 · In progress</p>
-  <h2>A room-temperature maser, pumped by an LED</h2>
+  <h2>A room-temperature maser pumped by an LED</h2>
   <ul class="tags">
     <li class="tag">RF front end</li>
     <li class="tag">Pulsed power</li>
@@ -114,7 +115,7 @@
   </div>
 
   <div class="beat">
-    <span class="beat-label">Before any of that</span>
+    <span class="beat-label">Earlier</span>
     <p>Technical literature review and market research to pin down what the system actually had to do, then Business and Customer Value Proposition analyses behind the design decisions. The proposals and presentations secured additional funding through Waterloo’s Engineers of the Future Fund.</p>
   </div>
 
@@ -132,7 +133,7 @@
 <!-- ---------- 3. LNA ---------- -->
 <article class="entry" id="lna">
   <p class="kicker">ECE 373 · Radio Frequency &amp; Microwave Circuits · Fall 2026</p>
-  <h2>An HF low-noise amplifier, all the way to measured</h2>
+  <h2>Building and measuring an HF low-noise amplifier</h2>
   <ul class="tags">
     <li class="tag">Keysight ADS</li>
     <li class="tag">Matching networks</li>
@@ -152,7 +153,7 @@
 <!-- ---------- 4. RTOS ---------- -->
 <article class="entry" id="rtos">
   <p class="kicker">MTE 241 · Computer Structures &amp; Real-Time Systems · Fall 2026</p>
-  <h2>Writing a real-time kernel from nothing</h2>
+  <h2>Writing a real-time kernel in C</h2>
   <ul class="tags">
     <li class="tag">C</li>
     <li class="tag">STM32F401RE</li>
@@ -161,10 +162,10 @@
     <li class="tag">Concurrency</li>
   </ul>
   <p>A working RTX kernel in C on bare-metal Cortex-M4 — stack and process creation, context switching, and both fixed-priority and earliest-deadline-first scheduling, built up lab by lab from memory-mapped I/O to a running multitasking system.</p>
-  <p>Then the classic ways concurrency kills you: semaphores, mutexes and barriers, with priority-inversion and deadlock handling, validated against producer-consumer and readers-writers workloads. Individual work, which is the point — there’s nowhere to hide in a context switch that doesn’t restore correctly.</p>
+  <p>Then the classic ways concurrency kills you: semaphores, mutexes and barriers, with priority-inversion and deadlock handling, validated against producer-consumer and readers-writers workloads. Individual work.</p>
   <div class="beat">
-    <span class="beat-label">Worth documenting</span>
-    <p>The scheduling policy, the context-switch approach, and exactly how priority inversion is handled. Those three answers are the whole interview.</p>
+    <span class="beat-label">Notes</span>
+    <p>Happy to walk through the scheduling policy, the context switch, and how priority inversion is handled.</p>
   </div>
 </article>
 
@@ -191,7 +192,7 @@
 <!-- ---------- 6. MEMS ---------- -->
 <article class="entry" id="mems">
   <p class="kicker">NE 454B / 455B · Nano-Instrumentation Laboratory · Fall 2026 – Winter 2027 · In progress</p>
-  <h2>MEMS actuators, from FEM to four masks in the cleanroom</h2>
+  <h2>MEMS actuators, from COMSOL to the cleanroom</h2>
   <ul class="tags">
     <li class="tag">COMSOL</li>
     <li class="tag">LayoutEditor</li>
@@ -202,7 +203,6 @@
   </ul>
   <p>Design MEMS actuators against a requirements-and-constraints spec — 2D and 3D FEM in COMSOL Multiphysics alongside lumped models, feasibility assessed before anything gets committed — then generate the mask layout in LayoutEditor to the design rules of a real multi-user microfabrication process.</p>
   <p>The winter term is the rare part: I fabricate my own masks. Four mask levels — four-point-probe sheet resistance on chromium, photolithography and wet etch, PECVD silicon nitride, RIE, a sacrificial layer, aluminium deposition, then sacrificial release — followed by visual inspection and precision IC prober testing.</p>
-  <blockquote>Design → FEM → mask layout → cleanroom fabrication → probe test isn’t a proxy for the MEMS engineer workflow. It is the workflow.</blockquote>
   <figure>
     <div class="slot">assets/img/mems-layout.png — mask layout, and a micrograph of the released device</div>
     <figcaption>Fig. 5 — Layout on the left, micrograph on the right. Devices that failed release are more interesting than the ones that didn’t.</figcaption>
@@ -212,7 +212,7 @@
 <!-- ---------- 7. MACHINE VISION ---------- -->
 <article class="entry" id="vision">
   <p class="kicker">Lumentum · Jan–Aug 2026</p>
-  <h2>Corner detection against a cycle-time budget</h2>
+  <h2>Corner detection fast enough for the line</h2>
   <ul class="tags">
     <li class="tag">Machine vision</li>
     <li class="tag">Template matching</li>
@@ -226,7 +226,7 @@
 <!-- ---------- 8. CONTAMINATION ---------- -->
 <article class="entry" id="contamination">
   <p class="kicker">Lumentum · Jan–Aug 2026</p>
-  <h2>A contamination investigation that came down to microscope optics</h2>
+  <h2>Tracking down a contamination failure</h2>
   <ul class="tags">
     <li class="tag">Failure analysis</li>
     <li class="tag">Surface chemistry</li>
@@ -239,7 +239,7 @@
 <!-- ---------- 9. BET / METHANE ---------- -->
 <article class="entry" id="bet">
   <p class="kicker">Natural Resources Canada · Research Assistant · Jan–Apr 2024</p>
-  <h2>When the material is fine and the measurement is lying</h2>
+  <h2>Why our surface area numbers didn’t match</h2>
   <ul class="tags">
     <li class="tag">Porous carbons</li>
     <li class="tag">CH₄ adsorption</li>
@@ -250,14 +250,13 @@
   <p>Activated carbons for methane adsorption, aimed at Canadian oil sands applications. I designed the activation-experiment matrix — physical versus chemical routes across temperature, pressure, acid concentration and duration — and built the analysis pipeline in Python.</p>
   <p>Then the results stopped making sense: N₂ BET surface area disagreed with measured methane uptake. The materials weren’t the problem. Standard BET runs nitrogen at 77&nbsp;K, and at cryogenic temperature N₂ doesn’t have the thermal energy to equilibrate into narrow micropores — activated diffusion, non-equilibrium isotherms, undercounted micropore volume. Methane cares about pores in roughly the 0.7–1.5&nbsp;nm range, which is precisely where that undercount lives.</p>
   <p>The fix is CO₂ at 273&nbsp;K: nearly two hundred kelvin warmer, and a smaller probe molecule besides. The deeper point is that BET theory assumes multilayer adsorption on an open surface while micropore filling is a volume-filling process — a “BET surface area” for activated carbon is an apparent number by convention. I revised the analysis to resolve the pore population that actually governs performance.</p>
-  <blockquote>The first instinct is to blame the sample. It’s worth asking whether the instrument can see what you’re asking it about.</blockquote>
 </article>
 
 <!-- ---------- 10. LAB COURSES ---------- -->
 <article class="entry" id="labs">
   <p class="kicker">Selected laboratory coursework</p>
   <h2>Time in the lab</h2>
-  <p>Lab courses are where my transcript and my actual ability agree with each other. Listed with grades, because they’re the honest signal.</p>
+  <p>Lab courses, with grades.</p>
   <div class="skills">
     <div><b>NE 340L — Microfabrication &amp; Thin-Film Technology · 92</b>Full process flow: photolithography, plasma etch, PECVD and sputtered thin-film deposition, film metrology and electrical test, with process-variation analysis across the resulting devices.</div>
     <div><b>NE 220L — Materials Science &amp; Engineering · 88</b></div>

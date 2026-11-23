@@ -21,8 +21,18 @@
   --wide: 60rem;
 }
 
-/* Pinned to the cream light palette — automatic dark-mode switch removed by request.
-   To bring dark mode back, restore the @media (prefers-color-scheme: dark) block. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:     #171A13;
+    --paper-2:   #1E2219;
+    --ink:       #E7EBDA;
+    --muted:     #8E9780;
+    --rule:      #2A3022;
+    --accent:    #9DB07E;
+    --accent-bg: #222821;
+    --shadow:    rgba(0, 0, 0, 0.4);
+  }
+}
 
 *, *::before, *::after { box-sizing: border-box; }
 

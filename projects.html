@@ -219,13 +219,27 @@
     <p>At the 0.2&nbsp;V operating point the tip moves about 6&nbsp;µm, the hottest point sits near 490&nbsp;K, and it draws about 80&nbsp;mA. Push the sweep further and you get almost 40&nbsp;µm, but just past 0.5&nbsp;V the hot arm crosses aluminium’s melting point (933&nbsp;K). The model is happy to keep going after that; a real device would melt. The current curve flattens as the arm heats too: resistance rises with temperature, so the heating partly limits itself.</p>
   </div>
   <p>The winter term is the rare part: I fabricate my own masks. Four mask levels — four-point-probe sheet resistance on chromium, photolithography and wet etch, PECVD silicon nitride, RIE, a sacrificial layer, aluminium deposition, then sacrificial release — followed by visual inspection and precision IC prober testing.</p>
-  <figure>
-    <div class="slot">assets/img/mems-sims.png — electrostatic C–V and displacement, electrothermal displacement and temperature</div>
-    <figcaption>Fig. 5 — The two COMSOL sweeps. The electrostatic curves bend sharply once the plate passes a third of the 3&nbsp;µm gap; the electrothermal hot arm would melt past about 0.5&nbsp;V.</figcaption>
-  </figure>
+  <div class="grid">
+    <figure>
+      <img src="assets/img/mems-esa-cv.png" alt="COMSOL plot: electrostatic actuator capacitance rising from 0.96 pF to about 1.67 pF as bias goes to 3.45 V">
+      <figcaption>Electrostatic: capacitance vs. bias.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/img/mems-esa-disp.png" alt="COMSOL plot: electrostatic plate displacement passing 1 µm near 3 V and running away toward pull-in">
+      <figcaption>Electrostatic: plate displacement. Past 1&nbsp;µm (a third of the gap) it runs away.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/img/mems-eta-disp.png" alt="COMSOL plot: electrothermal actuator tip displacement rising roughly linearly to almost 40 µm">
+      <figcaption>Electrothermal: tip displacement, about 6&nbsp;µm at 0.2&nbsp;V.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/img/mems-eta-temp.png" alt="COMSOL plot: electrothermal hot-arm peak temperature rising from 293 K to about 1400 K by 0.9 V">
+      <figcaption>Electrothermal: peak temperature. Aluminium melts at 933&nbsp;K, just past 0.5&nbsp;V.</figcaption>
+    </figure>
+  </div>
   <figure>
     <div class="slot">assets/img/mems-layout.png — mask layout, and a micrograph of the released device</div>
-    <figcaption>Fig. 6 — Layout and the released device, after winter fab. Devices that failed release are more interesting than the ones that didn’t.</figcaption>
+    <figcaption>Fig. 5 — Layout and the released device, after winter fab. Devices that failed release are more interesting than the ones that didn’t.</figcaption>
   </figure>
 </article>
 

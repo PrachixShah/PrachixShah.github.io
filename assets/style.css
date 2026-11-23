@@ -4,14 +4,14 @@
    ========================================================= */
 
 :root {
-  --paper:      #F7F0E0;
-  --paper-2:    #EFE6D2;
-  --ink:        #211C16;
-  --muted:      #6E6458;
-  --rule:       #E6DBC4;
-  --accent:     #B4512C;
-  --accent-bg:  #F3E4D9;
-  --shadow:     rgba(33, 28, 22, 0.08);
+  --paper:      #ECEFE5;
+  --paper-2:    #E2E7D6;
+  --ink:        #2E342A;
+  --muted:      #78806C;
+  --rule:       #DBE0CF;
+  --accent:     #5E6E4C;
+  --accent-bg:  #E2E7D4;
+  --shadow:     rgba(33, 38, 28, 0.08);
 
   --display: "Fraunces", Georgia, "Times New Roman", serif;
   --body:    "Newsreader", Georgia, "Times New Roman", serif;
@@ -36,8 +36,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--body);
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1.0625rem;
+  line-height: 1.65;
   font-synthesis-weight: none;
   -webkit-font-smoothing: antialiased;
 }
@@ -57,7 +57,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--display);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.12;
   letter-spacing: -0.015em;
   margin: 0 0 0.4em;
@@ -141,7 +141,7 @@ code {
 
 .wordmark {
   font-family: var(--display);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.15rem;
   letter-spacing: -0.01em;
   text-decoration: none;

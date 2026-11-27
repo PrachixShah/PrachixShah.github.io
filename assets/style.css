@@ -358,6 +358,63 @@ figcaption {
 .bucket li.done { color: var(--muted); }
 .bucket li.done .what { text-decoration: line-through; text-decoration-color: var(--accent); }
 .bucket li.done .box { color: var(--accent); }
+
+/* ---------- come along ---------- */
+
+.join-plans {
+  margin-top: 1.5rem;
+}
+
+.join-plans .join-button {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.join-plans .join-button:hover {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.join-plans :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.join-plans summary { list-style: none; }
+.join-plans summary::-webkit-details-marker { display: none; }
+.join-plans summary::after { content: " +"; }
+.join-plans[open] summary::after { content: " −"; }
+
+.join-plans form {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 28rem;
+  margin-top: 1rem;
+}
+
+.join-plans select,
+.join-plans textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 0.65rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: var(--paper-2);
+  color: var(--ink);
+  font: inherit;
+}
+
+.join-plans textarea { resize: vertical; }
+.join-plans button { justify-self: start; }
+.join-plans small { color: var(--muted); }
 .bucket .when {
   margin-left: auto;
   font-family: var(--mono);

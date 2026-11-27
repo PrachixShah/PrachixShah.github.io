@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Songs I love | Prachi Shah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,500;9..144,1,400&family=Spectral:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== Ethos — a study on how to live. Always dark. C font (Fraunces + Spectral). ===== */
+:root{
+  --paper:#191610;--paper-2:#211C15;--ink:#ECE4D3;--muted:#9A917C;--rule:#2C2719;
+  --accent:#9BA585;
+  --display:"Fraunces",Georgia,serif;
+  --body:"Spectral",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+[id]{scroll-margin-top:5rem;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:1.06rem;line-height:1.7;-webkit-font-smoothing:antialiased;}
+em{font-style:italic;}
+
+/* ---- top bar ---- */
+.bar{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:20;}
+.bar .in{max-width:1020px;margin:0 auto;padding:.9rem 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.wordmark{font-family:var(--display);font-weight:500;font-size:1.1rem;text-decoration:none;color:var(--ink);margin-right:auto;}
+.wordmark b{color:var(--accent);}
+.bar .back{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;}
+.bar .back:hover{color:var(--accent);}
+
+/* ---- shell ---- */
+.shell{max-width:1020px;margin:0 auto;padding:2.6rem 1.25rem 0;
+  display:grid;grid-template-columns:232px 1fr;gap:3.2rem;align-items:start;}
+
+/* ---- directory ---- */
+.dir{position:sticky;top:5rem;background:var(--paper-2);border:1px solid var(--rule);border-radius:6px;
+  padding:1.3rem 1.25rem 1.5rem;}
+.dir .hd{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 .2rem;}
+.dir .legend{font-family:var(--mono);font-size:.6rem;letter-spacing:.03em;color:var(--muted);margin:0 0 1.4rem;line-height:1.5;}
+.dir .legend .star{color:var(--accent);}
+.dir .grp{font-family:var(--display);font-weight:500;font-size:.95rem;color:var(--ink);margin:1.3rem 0 .45rem;}
+.dir .grp:first-of-type{margin-top:0;}
+.dir ul{list-style:none;margin:0;padding:0;}
+.dir li{margin:0;}
+.dir a{display:block;text-decoration:none;color:var(--muted);font-size:.95rem;line-height:1.3;
+  padding:.28rem 0 .28rem .7rem;border-left:2px solid transparent;transition:color .15s,border-color .15s;}
+.dir a:hover{color:var(--ink);}
+.dir a.on{color:var(--ink);border-left-color:var(--accent);}
+.dir .star{color:var(--accent);}
+
+/* ---- the study ---- */
+.study{padding-bottom:3.5rem;max-width:40rem;}
+.tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem;}
+.study h1{font-family:var(--display);font-weight:500;font-size:clamp(2.2rem,5vw,3rem);line-height:1.02;
+  letter-spacing:-.015em;margin:0 0 .4rem;}
+.study h1 .star{color:var(--accent);}
+.study .sub{font-style:italic;color:var(--muted);font-size:1.2rem;line-height:1.4;margin:0 0 1.2rem;}
+.study .intro{color:var(--muted);font-size:1rem;margin:0 0 1rem;}
+
+.sec{font-family:var(--display);font-weight:500;font-size:1.3rem;line-height:1.15;margin:2.6rem 0 .7rem;color:var(--ink);}
+.sec::before{content:"";display:block;width:2rem;border-top:2px solid var(--accent);margin-bottom:.9rem;}
+.belief{margin:0 0 .95rem;}
+.belief .star{color:var(--accent);}
+
+.divider{border:0;border-top:1px solid var(--rule);margin:3rem 0;}
+.minor h2{font-family:var(--display);font-weight:500;font-size:1.3rem;margin:0 0 .5rem;}
+.minor .sub{font-style:italic;color:var(--muted);margin:0 0 1rem;}
+.btn{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--accent);color:var(--accent);padding:.55rem 1rem;text-decoration:none;margin-top:.4rem;}
+.btn:hover{background:var(--accent);color:var(--paper);}
+.endmark{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:2.5rem;}
+.endmark .star{color:var(--accent);}
+
+.foot{max-width:1020px;margin:0 auto;padding:2rem 1.25rem 3.5rem;border-top:1px solid var(--rule);
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+  display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-top:2.5rem;}
+.foot a{color:var(--muted);text-decoration:none;}
+.foot a:hover{color:var(--accent);}
+.foot .end{margin-left:auto;text-transform:none;letter-spacing:.02em;}
+
+@media (max-width:720px){
+  .shell{grid-template-columns:1fr;gap:1.8rem;}
+  .dir{position:static;}
+}
+.study{width:100%;min-width:0;}
+.player{display:block;width:100%;height:152px;border:0;border-radius:12px;background:var(--paper-2);}
+.listen{display:inline-block;margin-top:1rem;color:var(--accent);text-underline-offset:.22em;}
+@media(max-width:720px){.shell{display:block;}.dir{display:none;}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="in">
+    <a class="wordmark" href="index.html">Prachi Shah<b>.</b></a>
+    <a class="back" href="ethos.html">← Ethos</a>
+  </div>
+</header>
+
+<div class="shell">
+
+  <!-- ============ DIRECTORY ============ -->
+  <aside class="dir">
+    <p class="hd">The index</p>
+
+    <p class="grp">The study</p>
+    <ul>
+      <li><a href="ethos.html#noticing" >Noticing</a></li>
+      <li><a href="ethos.html#argument">Argument</a></li>
+      <li><a href="ethos.html#love">Love, broadly</a></li>
+    </ul>
+
+    <p class="grp">Margins</p>
+    <ul>
+      <li><a href="ethos.html#still">Still want to do</a></li>
+      <li><a href="songs.html" class="on" aria-current="page">Songs I love</a></li>
+    </ul>
+
+    <p class="grp">Correspondence</p>
+    <ul>
+      <li><a href="ethos.html#hello">Say hello</a></li>
+    </ul>
+  </aside>
+
+  <main class="study">
+    <p class="tag">Margins</p>
+    <h1>Songs I love</h1>
+    <p class="sub">The ones I keep coming back to.</p>
+    <iframe class="player" title="Obsession History &amp; Niche Folk on Spotify"
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1FwZmvoQhvOru1?utm_source=generator&amp;theme=0&amp;si=fd351244d84d4f99" allowfullscreen
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"></iframe>
+    <a class="listen" href="https://open.spotify.com/playlist/37i9dQZF1FwZmvoQhvOru1?si=fd351244d84d4f99">Listen on Spotify ↗</a>
+  </main>
+</div>
+<footer class="foot">
+  <a href="mailto:shahprachi.sap@gmail.com">Email</a>
+  <a href="https://www.linkedin.com/in/prachixsh">LinkedIn</a>
+  <a href="index.html">← back to the work</a>
+  <span class="end">© 2026, give or take.</span>
+</footer>
+
+</body>
+</html>

@@ -152,11 +152,103 @@ em{font-style:italic;}
 
     <hr class="divider">
 
+          <details class="join-plans">
+        <summary class="join-button">Come along</summary>
+
+        <form id="join-plan-form">
+          <label for="join-plan">Which one?</label>
+          <select id="join-plan" required>
+            <option value="" disabled selected>Pick a plan</option>
+
+            <optgroup label="Outside">
+              <option>A Canadian national park this summer</option>
+              <option>A portage trip</option>
+              <option>Outdoor climbing</option>
+              <option>Night skiing</option>
+              <option>A meteor shower at a dark-sky reserve</option>
+              <option>A hut-to-hut hike in the Dolomites</option>
+              <option>The East Coast Trail in Newfoundland</option>
+              <option>A swim somewhere unusual</option>
+              <option>An overnight stay somewhere unusual</option>
+              <option>A desert dirt bike race</option>
+              <option>Something else outside</option>
+            </optgroup>
+
+            <optgroup label="Music, art & classes">
+              <option>Group guitar lessons</option>
+              <option>A kitchen jam</option>
+              <option>An improv class</option>
+              <option>A spoken word night</option>
+              <option>A ceilidh</option>
+              <option>A pottery class</option>
+              <option>Life drawing</option>
+            </optgroup>
+
+            <optgroup label="Other plans">
+              <option>A sleeper train trip</option>
+              <option>An observatory night</option>
+              <option>A radio or telescope build</option>
+              <option>A rocket launch</option>
+              <option>Cooking dinner together</option>
+              <option>An Engineers Without Borders project</option>
+              <option>Another idea from the list</option>
+            </optgroup>
+          </select>
+
+          <label for="join-note">Have a place or date in mind? (optional)</label>
+          <textarea id="join-note" rows="2"
+            placeholder="There’s a beginner class on Tuesdays near me…"></textarea>
+
+          <button class="join-button" type="submit">Let’s plan it ↗</button>
+          <small>Opens an email draft to Prachi.</small>
+        </form>
+      </details>
+
+      <script>
+        document.getElementById("join-plan-form").addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const plan = document.getElementById("join-plan").value;
+          const note = document.getElementById("join-note").value.trim();
+          const subject = `Count me in: ${plan}`;
+          const body = [
+            "Hey Prachi,",
+            `This caught my eye on your list: ${plan}.`,
+            note || "I'd love to do this with you. When are you thinking?"
+          ].join("\n\n");
+
+          window.location.href = "mailto:shahprachi.sap@gmail.com"
+            + `?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+      </script>
+    
     <section class="minor" id="still">
       <h2>Still want to do</h2>
       <p class="sub">Kept here so I don't forget to actually go.</p>
-      <p class="belief">Solo hikes. A real portage trip. Night skiing somewhere with no town in the sky. And another shower from a dark-sky reserve — the first one I'm still not over.</p>
+
+      <p class="belief">More solo hikes. A real portage trip with friends. Night skiing somewhere with no town in the sky. Another meteor shower from a dark-sky reserve. The first one I'm still not over.</p>
+      <p class="belief">Visit a Canadian national park every summer for the rest of my life. Get to as many as I can. Leave a few summers for the places I want to see twice.</p>
+      <p class="belief">Plan whole trips around a hike. Walk hut to hut in the Dolomites. Take the ferry to Newfoundland and spend a few days on the East Coast Trail.</p>
+      <p class="belief">Get into outdoor climbing. Find a crag close enough to go back on weekends and a route I can get a little further up each time. Eat a slightly squashed sandwich at the top.</p>
+      <p class="belief">Swim in a quarry, a volcanic crater lake, a little cove you can only get to by kayak. Swim in a lake that takes a full day of hiking to reach.</p>
+      <p class="belief">Sleep in a lighthouse. A tent in the desert. A mountain hut where everyone at the dinner table came up by a different trail. Sleep outside on a night warm enough to leave the tent packed.</p>
+      <p class="belief">Take a sleeper train across Canada. Skate the length of the Rideau Canal. Walk out at low tide on the Bay of Fundy, then come back a few hours later to see how far underwater I'd be.</p>
+      <p class="belief">Learn to ride a dirt bike well enough to enter a desert race. I want to be at the starting line for that at least once.</p>
+      <p class="belief">Hear a loon from a canoe. Go on a night hike with someone who knows the frogs by their calls. Learn one well enough to recognize it the next spring.</p>
+      <p class="belief">See the northern lights. Learn enough constellations to show someone around the sky. Go to an observatory on a public night. Grind a telescope mirror by hand and see Saturn's rings through the finished thing.</p>
+      <p class="belief">Build a radio and catch a station on it. Watch a rocket launch in person and feel the sound arrive after I've seen it lift off.</p>
+      <p class="belief">Learn guitar in a group class. Get one song all the way through, then learn one my friends know the words to. Pick out a song by ear. Have people over for a kitchen jam and sing harmony with someone who can hold the melody.</p>
+      <p class="belief">Take an improv class. Do the end-of-class show. Invite the friend whose laugh I'd recognize from backstage.</p>
+      <p class="belief">Go to a spoken word night. Go back with something of my own and put my name on the list. Go line dancing. Get really good at Garba</p>
+      <p class="belief">Take a pottery class and make a mug I reach for every morning.</p>
+      <p class="belief">Host a dinner big enough that I have to borrow chairs. Learn a family recipe well enough to be the person someone calls for it.</p>
+      <p class="belief">Get my cousins together for a trip we plan ourselves.</p>
+      <p class="belief">Grow a cutting from a friend's kitchen plant. Keep it alive long enough to give them a cutting back.</p>
+      <p class="belief">Work on an Engineers Without Borders project. Stay involved long enough to hear what the people using what we built would change.</p>
+      <p class="belief">Buy dinner for someone who needs it. </p>
     </section>
+
+    <hr class="divider">
 
     <hr class="divider">
 
